@@ -1,0 +1,22 @@
+Input is to be given in the form of 'x y', eg: 10 10. Input for 'Maze Dimensions' is given in terms of cells, not pixels. Both starting node and goal node take co-ordinates in the form of indices, eg: if maze dimensions = 10 10, then the top left cell would 0 0 and the bottom right cell would be 9 9. 
+
+Checking 'Yes' for 'Show Exploration' will show the exploration path of the algorithm. Due to the amount of changes being made to the GUI, this will cause the program to work slower than if 'Show Exploration' was checked as 'No'.
+
+Choosing different algorithms will change the way the program works, including the path and exploration.
+
+Once at the maze GUI, you can click on the cells to create/remove obstacles. Once you have added/deleted the desired amount of obstacles, you press the `RETURN` key to start the execution of the path finding algorithm. If you press `RETURN` during the exploration phase, it will stop the exploration. Pressing `RETURN` again will start the exploration from the start node, essentially resetting it.
+
+Pressing `Space` will clear the maze of any obstacles and paths. Pressing `Ctrl+Space` will clear only paths while keeping obstacles.
+
+You can press the corresponding key to switch algorithms while on the maze GUI:
+1. A*
+2. BFS
+3. DFS
+4. RBFS
+
+NOTE: RBFS is a recursive function and in the current version, RBFS cannot be stopped during exploration or execution. Also, due to the small differences in f values of nodes and their neighbours, RBFS does a lot of backtracking if it encounters an obstacle in optimal path. This makes it take a significantly long amount of time to execute. My advice would to limit the maze to a 5x5 grid if you want to run it.
+
+Closing the maze screen allows you to go back to the maze creation screen.
+
+
+NOTE: To increase or decrease the speed of exploration, open the maze_gui.py file, and find pygame.time.wait in render_exploration function inside the PygameMaze class. Time is given in form of ms.
